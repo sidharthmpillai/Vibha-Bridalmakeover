@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sneak Peek | Bridal Final Looks</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Navigation (EXACT SAME AS INDEX) -->
+<nav>
+  <div class="container">
+    <div class="logo">
+      <img src="images/logo.jpeg" alt="Vibha Bridal Makeover Logo">
+      <span>VIBHA BRIDALMAKEOVER</span>
+    </div>
+    <div class="mobile-menu">☰</div>
+    <ul class="nav-links">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#portfolio">Portfolio</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Sneak Peek Header -->
+<section class="video-hero">
+  <div class="container">
+    <h1>Bridal Final Looks</h1>
+    <p>A glimpse into our brides’ most magical moments</p>
+  </div>
+</section>
+
+<!-- Videos Section -->
+<section class="video-section">
+  <div class="container">
+
+    <div class="video-grid">
+
+      <div class="video-card">
+        <video controls playsinline preload="metadata">
+          <source src="images/video1.mp4" type="video/mp4">
+        </video>
+        <h4>Traditional Bridal Look</h4>
+      </div>
+
+      <div class="video-card">
+        <video controls playsinline preload="metadata">
+          <source src="images/video2.mp4" type="video/mp4" class="vid2">
+        </video>
+        <h4>Wedding Glam</h4>
+      </div>
+
+      <div class="video-card">
+        <video controls playsinline preload="metadata">
+          <source src="images/video3.mp4" type="video/mp4">
+        </video>
+        <h4>Reception Look</h4>
+      </div>
+      
+       <div class="video-card">
+        <video controls playsinline preload="metadata">
+          <source src="images/video4.mp4" type="video/mp4">
+        </video>
+        <h4>HD Bridal Finish</h4>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Back Button -->
+<div class="portfolio-btn-wrap">
+  <a href="index.html#portfolio" class="cta-btn">Back to Portfolio</a>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const navLinks = document.querySelector(".nav-links");
+
+  if (!mobileMenu || !navLinks) return;
+
+  mobileMenu.addEventListener("click", (e) => {
+    navLinks.classList.toggle("active");
+    e.stopPropagation(); // Prevent the click from bubbling up to the document
+  });
+
+  // Close menu when a link is clicked
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!navLinks.contains(e.target) && !mobileMenu.contains(e.target)) {
+      navLinks.classList.remove("active");
+    }
+  });
+
+});
+</script>
+
+
+</body>
+</html>
